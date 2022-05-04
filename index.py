@@ -43,6 +43,7 @@ try:
         checkNotRobot()
 
         # Começar Assitir Anúncio
+        print('Iniciando Abertura do Anúncio')
         retInit = getImage('botaoAssitirVideo.png')
         if retInit == False:
             time.sleep(2)
@@ -55,7 +56,7 @@ try:
         while(finished == False):
             time.sleep(5)
 
-            for a in [1, 2, 3]:
+            for a in [1, 2, 3, 4, 5]:
                 nameImage = ">>" + str(a)
                 print('Buscando a imagem: ' + str(nameImage))
                 retFirstStage = getImage(str(nameImage) + '.png')
