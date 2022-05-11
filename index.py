@@ -30,7 +30,7 @@ try:
         while(finished == False):
             time.sleep(5)
 
-            print('Iniciando Fechamento do Anuncio')
+            print('---------Iniciando Fechamento do Anuncio---------')
             closeButton = classProccess.getObject("closeButtons.svm")
             if(closeButton == False):
                 raise Exception("Erro ao tentar localizar fechamento anúncio")
@@ -49,6 +49,11 @@ try:
                     print('Verificação de Eu não sou Robô encontrado. Fim do processo')
                     finished = True
                     break
+
+                print('Iniciando verificação da Google Play')
+                retGooglePlay = classProccess.checkGooglePlay()
+                if(retGooglePlay == False):
+                    raise Exception("Erro no processo Google Play")
                 
                 continue
 

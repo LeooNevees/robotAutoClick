@@ -29,4 +29,11 @@ for imagem in glob.glob(os.path.join("img/procurar", "print.png")):
 
 cv2.destroyAllWindows()
 
+
+
+
+Imagens que necessitam prints para cada tipo de tela:
+ - Imagem "cheeckImNotRobot"
+ - Imagem "buttonBackApp"
+
  -->

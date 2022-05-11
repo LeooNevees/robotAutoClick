@@ -112,3 +112,21 @@ class Proccess:
             print('Erro Método checkNotRobot: ', error)
             return False
 
+    def checkGooglePlay(self):
+        try:
+            retGooglePlay = self.getObject("googlePlay.svm", 'N', 'N')
+            if(retGooglePlay == False):
+                raise Exception("Não foi possível identificar se está na Google Play")
+
+            if(retGooglePlay == None):
+                return None
+
+            retButtonBack = self.getImage('buttonBackApp.png')
+            if(retButtonBack != True):
+                raise Exception("Não identificado Botão Voltar do App")
+
+            return True
+        except Exception as error:
+            print('Erro Método checkGooglePlay: ', error)
+            return False
+
