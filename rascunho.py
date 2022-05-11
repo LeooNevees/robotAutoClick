@@ -23,7 +23,7 @@ def checkNotRobot():
     retRobot = getImage('naoSouRobo.png', 'N', 'N')
     if retRobot == True:
         print('Tem Robo para Checar')
-        retCheckRobot = getImage('checkNaoSouRobo.png')
+        retCheckRobot = getImage('files/checkImNotRobot.png.png')
 
         time.sleep(2)
         retVerify = getImage('verificarCheck.png')

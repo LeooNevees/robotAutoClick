@@ -7,7 +7,7 @@
     Check more detail on https://github.com/NaturalIntelligence/imglab
 </comment>
 <images>	<image file='imNotRobot.png'>
-		<box top='19' left='256' width='41' height='35'>
+		<box top='23' left='42' width='137' height='134'>
 			<label>unlabelled</label>
 		</box>
 	</image>

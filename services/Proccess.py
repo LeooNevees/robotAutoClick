@@ -9,7 +9,6 @@ class Proccess:
 
     def getObject(self, svm, moveMouse = 'N', click = 'S', increment = 5):
         try:
-            print('Iniciou GetObject')
             fileSvm = "files/" + str(svm)
             filePrint = "files/temp/print.png"
 
@@ -45,7 +44,6 @@ class Proccess:
 
                     if click == 'S':
                         pyautogui.click(x, y) 
-                    print('Finalizou GetObject')
 
                 # cv2.imshow("Detector", img)
                 # cv2.waitKey(0)
@@ -78,18 +76,31 @@ class Proccess:
             print('Erro Método getImage: ', error)
             return False
 
+    def verifyImNotRobot(self):
+        try:
+            retImNotRobot = self.getObject("imNotRobot.svm")
+            if(retImNotRobot == False):
+                raise Exception("Não foi possível identificar se possui robô para checar")
+
+            return retImNotRobot
+        except Exception as error:
+            print('Erro Método verifyImNotRobot: ', error)
+            return False
+
     def checkNotRobot(self):
         try:
-            # retRobot = self.getObject("imNotRobot.svm")
-            # if(retRobot == False):
-            #     raise Exception("Não foi possível identificar se possui robô para checar")
+            retRobot = self.verifyImNotRobot()
+            print('Retorno verificar Robô')
+            print(retRobot)
+            if(retRobot == False):
+                raise Exception("Não foi possível identificar se possui robô para checar")
             
-            # if(retRobot == None):
-            #     return True
+            if(retRobot == None):
+                return True
 
-            # retCheckRobot = self.getImage('checkImNotRobot.png')
-            # if(retCheckRobot != True):
-            #     raise Exception("Não identificado check Robô")
+            retCheckRobot = self.getImage('checkImNotRobot.png')
+            if(retCheckRobot != True):
+                raise Exception("Não identificado check Robô")
 
             time.sleep(5)
             retVerify = self.getObject("verifyCheckRobot.svm", 'N', 'S', 40)

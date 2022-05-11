@@ -6,23 +6,28 @@
     This dataset is manually crafted or adjusted using ImgLab web tool
     Check more detail on https://github.com/NaturalIntelligence/imglab
 </comment>
-<images>	<image file='x2.png'>
-		<box top='54' left='97' width='24' height='26'>
+<images>	<image file='x1.png'>
+		<box top='21' left='537' width='22' height='19'>
+			<label>unlabelled</label>
+		</box>
+	</image>
+	<image file='x2.png'>
+		<box top='56' left='97' width='24' height='24'>
 			<label>unlabelled</label>
 		</box>
 	</image>
 	<image file='x3.png'>
-		<box top='47' left='78' width='24' height='24'>
+		<box top='47' left='78' width='24' height='25'>
 			<label>unlabelled</label>
 		</box>
 	</image>
 	<image file='x4.png'>
-		<box top='25' left='526' width='22' height='22'>
+		<box top='25' left='528' width='19' height='22'>
 			<label>unlabelled</label>
 		</box>
 	</image>
-	<image file='x1.png'>
-		<box top='19' left='536' width='24' height='22'>
+	<image file='x5.png'>
+		<box top='13' left='49' width='24' height='24'>
 			<label>unlabelled</label>
 		</box>
 	</image>
