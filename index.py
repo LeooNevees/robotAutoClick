@@ -1,85 +1,62 @@
-from queue import Empty
-import string
-from tabnanny import check
-from tokenize import String
-import pyautogui
+from fileinput import close
+import os
 import time
+import pyautogui
 
-
-def getImage(file, moveMouse='N', click='S'):
-    button = pyautogui.locateOnScreen("img/"+str(file))
-    if button == None:
-        return False
-
-    localizationButton = pyautogui.center(button)
-    x, y = localizationButton
-
-    if moveMouse == 'S':
-        pyautogui.moveTo(x, y)
-
-    if click == 'S':
-        pyautogui.click(x, y)
-
-    return True
-
-
-def checkNotRobot():
-    print('Iniciou Checagem Robo')
-    retRobot = getImage('naoSouRobo.png', 'N', 'N')
-    if retRobot == True:
-        print('Tem Robo para Checar')
-        retCheckRobot = getImage('checkNaoSouRobo.png')
-
-        time.sleep(2)
-        retVerify = getImage('verificarCheck.png')
-
-    return True
-
+from services.Proccess import Proccess
 
 try:
+    classProccess = Proccess()
 
     while True:
         # Verificar se existe Não sou Robô na tela
-        checkNotRobot()
+        print('Iniciando análise Não Sou Robô')
+        retNotRobot = classProccess.checkNotRobot()
+        if(retNotRobot == False):
+            raise Exception("Erro ao checar Não sou Robô")
 
         # Começar Assitir Anúncio
         print('Iniciando Abertura do Anúncio')
-        retInit = getImage('botaoAssitirVideo.png')
-        if retInit == False:
+        retInit = classProccess.getObject("buttonInit.svm", 'N', 'S', 50)
+        pyautogui.moveTo(1000, 500)
+        print('Retorno do botao iniciar')
+        print(retInit)
+        if(retInit == False):
+            raise Exception("Erro ao tentar localizar botão de abertura anúncio")
+        if(retInit == None):
             time.sleep(2)
             continue
+        
 
         # Fechar Anúncio
-        time.sleep(15)
         print('Iniciando Fechamento do Anuncio')
+        time.sleep(15)
+
         finished = False
         while(finished == False):
             time.sleep(5)
 
-            for a in [1, 2, 3, 4, 5]:
-                nameImage = ">>" + str(a)
-                print('Buscando a imagem: ' + str(nameImage))
-                retFirstStage = getImage(str(nameImage) + '.png')
-                if retFirstStage == True:
-                    print('Imagem >> encontrado. Finalizando processo')
-                    break
+            closeButton = classProccess.getObject("closeButtons.svm")
+            print('Retorno Busca por Botão de Fechar')
+            print(closeButton)
+            if(closeButton == False):
+                raise Exception("Erro ao tentar localizar fechamento anúncio")
 
-            time.sleep(5)
-            pyautogui.moveTo(1000, 500)
-
-            for a in [1, 2, 3, 4]:
-                nameImage = "x" + str(a)
-                print('Buscando a imagem: ' + str(nameImage))
-                retSecondStage = getImage(str(nameImage) + '.png')
-                if retSecondStage == True:
-                    print('Imagem x encontrado. Finalizando processo')
+            if(closeButton == None):
+                print('Entrou no if do closeButton = NONE')
+                retNewInit = classProccess.getObject("buttonInit.svm", 'N', 'N')
+                print('Retorno Busca por Botão de INICIAR')
+                print(retNewInit)
+                if(retNewInit == True):
+                    print('Entrou no IF de botão de iniciar TRUE')
                     finished = True
                     break
+                continue
 
-            continue
+            pyautogui.moveTo(1000, 500)
 
         time.sleep(2)
 
 except Exception as error:
-    print('Erro: ', error)
-    pyautogui.screenshot('Exception.png')
+    print(error)
+    # pyautogui.screenshot('files/Exception.png')
