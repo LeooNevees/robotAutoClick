@@ -90,8 +90,6 @@ class Proccess:
     def checkNotRobot(self):
         try:
             retRobot = self.verifyImNotRobot()
-            print('Retorno verificar Robô')
-            print(retRobot)
             if(retRobot == False):
                 raise Exception("Não foi possível identificar se possui robô para checar")
             
@@ -102,8 +100,7 @@ class Proccess:
             if(retCheckRobot != True):
                 raise Exception("Não identificado check Robô")
 
-            time.sleep(5)
-            retVerify = self.getObject("verifyCheckRobot.svm", 'N', 'S', 40)
+            time.sleep(5)xObject("verifyCheckRobot.svm", 'N', 'S', 40)
             if(retVerify != True):
                 raise Exception("Não encontrado botão de Verificar")
 

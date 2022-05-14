@@ -7,10 +7,17 @@
     Check more detail on https://github.com/NaturalIntelligence/imglab
 </comment>
 <images>	<image file='googlePlay.png'>
-		<box top='38' left='47' width='25' height='35'>
+		<box top='8' left='9' width='103' height='23'>
 			<label>unlabelled</label>
 		</box>
-		<box top='32' left='137' width='19' height='47'>
+	</image>
+	<image file='googlePlay2.png'>
+		<box top='21' left='177' width='155' height='48'>
+			<label>unlabelled</label>
+		</box>
+	</image>
+	<image file='googlePlay4.png'>
+		<box top='36' left='31' width='127' height='26'>
 			<label>unlabelled</label>
 		</box>
 	</image>

@@ -7,27 +7,42 @@
     Check more detail on https://github.com/NaturalIntelligence/imglab
 </comment>
 <images>	<image file='x1.png'>
-		<box top='21' left='537' width='22' height='19'>
+		<box top='21' left='538' width='22' height='19'>
 			<label>unlabelled</label>
 		</box>
 	</image>
 	<image file='x2.png'>
-		<box top='56' left='97' width='24' height='24'>
+		<box top='58' left='99' width='21' height='20'>
 			<label>unlabelled</label>
 		</box>
 	</image>
 	<image file='x3.png'>
-		<box top='47' left='78' width='24' height='25'>
+		<box top='47' left='79' width='22' height='24'>
 			<label>unlabelled</label>
 		</box>
 	</image>
 	<image file='x4.png'>
-		<box top='25' left='528' width='19' height='22'>
+		<box top='26' left='527' width='19' height='19'>
 			<label>unlabelled</label>
 		</box>
 	</image>
 	<image file='x5.png'>
-		<box top='13' left='49' width='24' height='24'>
+		<box top='13' left='49' width='23' height='22'>
+			<label>unlabelled</label>
+		</box>
+	</image>
+	<image file='x6.png'>
+		<box top='14' left='56' width='18' height='16'>
+			<label>unlabelled</label>
+		</box>
+	</image>
+	<image file='x7.png'>
+		<box top='11' left='17' width='16' height='15'>
+			<label>unlabelled</label>
+		</box>
+	</image>
+	<image file='x8.png'>
+		<box top='17' left='19' width='16' height='14'>
 			<label>unlabelled</label>
 		</box>
 	</image>

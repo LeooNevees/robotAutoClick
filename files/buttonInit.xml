@@ -6,8 +6,13 @@
     This dataset is manually crafted or adjusted using ImgLab web tool
     Check more detail on https://github.com/NaturalIntelligence/imglab
 </comment>
-<images>	<image file='buttonTeste.png'>
-		<box top='222' left='125' width='339' height='63'>
+<images>	<image file='buttonInit.png'>
+		<box top='224' left='126' width='339' height='61'>
+			<label>unlabelled</label>
+		</box>
+	</image>
+	<image file='buttonInit2.png'>
+		<box top='36' left='25' width='325' height='75'>
 			<label>unlabelled</label>
 		</box>
 	</image>
